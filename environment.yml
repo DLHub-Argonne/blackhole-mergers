@@ -1,5 +1,8 @@
-name: prl
+name: plb
 dependencies:
   - python==3.6.*
   - tensorflow==1.14.*
   - h5py
+  - pip
+  - pip:
+     - dlhub_sdk
