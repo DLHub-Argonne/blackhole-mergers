@@ -1,6 +1,7 @@
 # DLHub Publication Example: Black Holes Mergers
 
-Publication code for a model to infer properties of black holes from gravitational waves
+Publication code for a model to infer properties of black holes from gravitational waves. Based on 
+[work by Khan, Huerta, and Das from UIUC](https://arxiv.org/abs/2004.09524).
 
 ## Installation
 
