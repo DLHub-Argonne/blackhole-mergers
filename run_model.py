@@ -1,13 +1,12 @@
 from dlhub_sdk.client import DLHubClient
 from argparse import ArgumentParser
 import numpy as np
-import logging
-
-# Make a logger
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
 # Make the client
 client = DLHubClient()
+
+# TODO (wardlt): Increase default size, make it easier to access
+client._fx_client.DEFAULT_MAX_REQUEST_SIZE = 50 * 1024 ** 3
 
 # Parse CLI arguments
 parser = ArgumentParser(description='Run the model')
@@ -17,11 +16,9 @@ parser.add_argument('--test-size', help='Number of waveforms to test', type=int,
 args = parser.parse_args()
 
 # Make some test data
-test_data = np.zeros((args.test_size, 101300, 1), dtype=int)
-logging.info(f'Made {test_data.shape[0]} test samples')
+test_data = np.random.uniform(size=(args.test_size, 101300, 1))
 
 # Run it through dlhub
-logging.info(f'Made invokation to DLHub servable: {args.model}')
-result = client.run(args.model, test_data.tolist())
+result = client.run(args.model, test_data)
 
 print(result)
