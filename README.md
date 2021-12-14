@@ -5,6 +5,13 @@ Publication code for a model to infer properties of black holes from gravitation
 
 ## Installation
 
+Clone the repository first:
+
+```bash
+git clone https://github.com/DLHub-Argonne/blackhole-mergers.git
+cd blackhole-merger
+```
+
 Our environment is defined using Anaconda. Install it by calling:
 
 `conda env create --file environment.yml`
